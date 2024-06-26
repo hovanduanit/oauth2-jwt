@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Info</title>
+</head>
+<body>
+<h1>User Info</h1>
+<p>Welcome, <span th:text="${#authentication.name}">User</span>!</p>
+<p>Email: <span th:text="${#authentication.principal.attributes['email']}">example@example.com</span></p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/>
+</form>
+</body>
+</html>
